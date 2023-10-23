@@ -1,8 +1,13 @@
 //your code here
-function strip(bandName) {
-	return bandName.replace(/^(a | an| the)/i, '').trim();
+function getArticleLessString(input) {
+	let words = input.split(" ");
+	let nonArticleWords = words.filter((word) => {
+		let smallCaseWord = word.toLowerCase();
+		if(smallCaseWord === "the" || smallCaseWord === "an" || smallCaseWord === "a"){
+			return false;
+		}
+		return true;
+	});
+	return nonArticleWords.join(" ");
 }
-const sortedBands = band.sort((a, b) => strip(a) > strip(b) ? 1 : -1);
 
-document.querySelector('#band').innerHTML = sortedBands.map(band => `<li>${band}</li>`).join('');
-console.log(sortedBands);
