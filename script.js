@@ -8,6 +8,7 @@ function getArticleLessString(input) {
 		}
 		return true;
 	});
-	return nonArticleWords.join(" ");
+	let result = nonArticleWords.join(" ");
+	return result.sort();
 }
 
