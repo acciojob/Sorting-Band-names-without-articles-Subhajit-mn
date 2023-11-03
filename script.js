@@ -1,5 +1,4 @@
 //your code here
-let input = ['The Virupaksha Temple', 'Victoria Memorial', 'Tajmahal'];
 function getArticleLessString(input) {
 	let words = input.split(" ");
 	let nonArticleWords = words.filter((word) => {
